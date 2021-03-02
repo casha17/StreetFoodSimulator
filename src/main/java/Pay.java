@@ -17,7 +17,15 @@ public class Pay extends SimulationProcess {
             {
                 //Paying time
                 hold(0.15);
+
                 SimulatorCore.cashiers++;
+                if (!SimulatorCore.cashierQueue.isEmpty()) {
+                    try {
+                        SimulatorCore.cashierQueue.pop().activate();
+                    } catch (Exception ex) {
+
+                    }
+                }
             //    System.out.println("c"+ customer.getId() + " Pay " + Scheduler.currentTime() );
 
                 new Leaving(this.customer).activate();

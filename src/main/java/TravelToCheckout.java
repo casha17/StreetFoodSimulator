@@ -25,9 +25,6 @@ public class TravelToCheckout extends SimulationProcess {
                     this.terminate();
                 }
 
-                if (!SimulatorCore.cashierQueue.isEmpty()) {
-                    SimulatorCore.cashierQueue.pop().activate();
-                }
                 SimulatorCore.cashiers--;
 
                 new Pay(this.customer).activate();

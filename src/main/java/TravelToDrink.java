@@ -29,9 +29,7 @@ public class TravelToDrink extends SimulationProcess {
                     this.terminate();
                 }
 
-                if (!SimulatorCore.drinkingQueue.isEmpty()) {
-                    SimulatorCore.drinkingQueue.pop().activate();
-                }
+
                 SimulatorCore.drinkWorkers--;
                 new PouringDrink(this.customer).activate();
 

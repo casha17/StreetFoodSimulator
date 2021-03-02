@@ -25,9 +25,7 @@ public class TravelToPizza extends SimulationProcess {
                     this.terminate();
                 }
 
-                if (!SimulatorCore.pizzaQueue.isEmpty()) {
-                    SimulatorCore.pizzaQueue.pop().activate();
-                }
+
                 SimulatorCore.pizzaWorkers--;
                 new RecievePizza(this.customer).activate();
 

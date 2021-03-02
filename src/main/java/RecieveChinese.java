@@ -21,6 +21,13 @@ public class RecieveChinese extends SimulationProcess {
                 //Waiting for chinese to finish
                 hold(chineseMakingTime.getNumber());
                 SimulatorCore.chineseWorkers++;
+                if (!SimulatorCore.chineseQueue.isEmpty()) {
+                   try {
+                       SimulatorCore.chineseQueue.pop().activate();
+                   } catch (Exception ex) {
+
+                   }
+                }
                 new OrderAgainOrLeave(this.customer).activate();
                 this.terminate();
             }

@@ -23,6 +23,14 @@ public class PouringDrink extends SimulationProcess {
                 hold(pouringTime.getNumber());
                 //after pouring release drink worker
                 SimulatorCore.drinkWorkers++;
+                if (!SimulatorCore.drinkingQueue.isEmpty()) {
+                    try{
+                        SimulatorCore.drinkingQueue.pop().activate();
+                    } catch (Exception ex) {
+
+                    }
+
+                }
              //   System.out.println( "c"+this.customer.getId() +  " Poured drink " + Scheduler.currentTime());
 
                 //Decide only drink or

@@ -24,9 +24,7 @@ public class TravelToChinese extends SimulationProcess {
                     this.terminate();
                 }
 
-                if (!SimulatorCore.chineseQueue.isEmpty()) {
-                    SimulatorCore.chineseQueue.pop().activate();
-                }
+
                 SimulatorCore.chineseWorkers--;
                 new RecieveChinese(this.customer).activate();
 

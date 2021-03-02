@@ -30,9 +30,7 @@ public class TravelTo extends SimulationProcess {
                 this.terminate();
             }
             // If tablesQueue is not empty take next customer and enter
-            if (!SimulatorCore.tableQueue.isEmpty()) {
-                SimulatorCore.tableQueue.pop().activate();
-            }
+
             // Reserve table
             SimulatorCore.tables--;
 

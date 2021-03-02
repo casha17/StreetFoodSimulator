@@ -20,6 +20,13 @@ public class LeaveTable extends SimulationProcess {
                // System.out.println("c"+ customer.getId() + " Leave table " + Scheduler.currentTime() );
                 //release table
                 SimulatorCore.tables++;
+                if (!SimulatorCore.tableQueue.isEmpty()) {
+                    try {
+                        SimulatorCore.tableQueue.pop().activate();
+                    } catch (Exception ex) {
+
+                    }
+                }
 
                 new TravelToCheckout(this.customer).activate();
 

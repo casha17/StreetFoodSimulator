@@ -24,9 +24,7 @@ public class TravelToBurger extends SimulationProcess {
                     this.terminate();
                 }
 
-                if (!SimulatorCore.burgerQueue.isEmpty()) {
-                    SimulatorCore.burgerQueue.pop().activate();
-                }
+
                 SimulatorCore.burgerWorkers--;
                 new RecieveBurger(this.customer).activate();
 
