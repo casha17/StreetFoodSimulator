@@ -17,42 +17,59 @@ public class SimulatorCore extends SimulationProcess {
     public static int drinkWorkers = 3;
     public static LinkedList<SimulationProcess> drinkingQueue = new LinkedList<>();
     public static LinkedList<SimulationProcess> tableQueue = new LinkedList<>();
-    public static LinkedList<SimulationProcess> PizzaQueue = new LinkedList<>();
+    public static LinkedList<SimulationProcess> pizzaQueue = new LinkedList<>();
     public static LinkedList<SimulationProcess> burgerQueue = new LinkedList<>();
     public static LinkedList<SimulationProcess> chineseQueue = new LinkedList<>();
+    public static LinkedList<SimulationProcess> cashierQueue = new LinkedList<>();
     public static int cashiers = 3;
     public static int pizzaWorkers = 3;
     public static int burgerWorkers = 3;
     public static int chineseWorkers = 3;
     public ExponentialStream interArrivalTime = new ExponentialStream(1);
-    public SimulatorCore() {
+    public static int totalCustomersLeaved = 0;
+    public static int totalNumberOfCustomers;
 
+    public SimulatorCore() {
+    }
+
+    public static void reset( ) {
+        totalCustomersLeaved = 0;
+        customerArrivals = 0;
     }
 
 
     public void run() {
         try {
-            //Creater Arrival thread
-            Arrival a = new Arrival();
-            // Start Arrival
-            a.activate();
+
+            for (int i = 0; i<3; i++) {
+                totalNumberOfCustomers = 3;
+
+                Arrival a = new Arrival();
+
+                a.activate();
 
             //Start Simulation
-            Simulation.start();
 
-            // Run simulation until arrivals hit 200
-            while (customerArrivals < 10){
-                hold(1);
+                Simulation.start();
+
+
+
+                while ( totalCustomersLeaved < totalNumberOfCustomers){
+
+                    hold(1);
+
+                }
+                a.interrupt();
+
+                a.terminate();
+
+                Simulation.stop();
+
+                SimulatorCore.reset();
+
+                System.out.println("Stopping simulation");
             }
-            Simulation.stop();
-            a.interrupt();
-            a.terminate();
             SimulationProcess.mainResume();
-            System.out.println("Stopping simulation");
-
-
-
-
         }
         catch (final Exception e)
         {

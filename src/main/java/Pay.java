@@ -16,10 +16,10 @@ public class Pay extends SimulationProcess {
             try
             {
                 //Paying time
-                hold(1);
-                System.out.println("c"+ customer.getId() + " Pay " + Scheduler.currentTime() );
-                //release cashier
+                hold(0.15);
                 SimulatorCore.cashiers++;
+                System.out.println("c"+ customer.getId() + " Pay " + Scheduler.currentTime() );
+
                 new Leaving(this.customer).activate();
 
                 this.terminate();

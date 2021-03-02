@@ -29,6 +29,10 @@ public class Arrival extends SimulationProcess {
                 // new Travel to
                 new TravelTo(customer).activate();
 
+                if(SimulatorCore.customerArrivals >= SimulatorCore.totalNumberOfCustomers) {
+                    this.terminate();
+
+                }
 
 
             }

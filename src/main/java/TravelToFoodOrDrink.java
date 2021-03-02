@@ -22,8 +22,6 @@ public class TravelToFoodOrDrink extends SimulationProcess {
 
                 //Printer helper
                 System.out.println("c"+ customer.getId() + " Travel to food or drink " + Scheduler.currentTime() );
-                System.out.println(SimulatorCore.getBranch());
-
                 // 40% chance
                 if (SimulatorCore.getBranch() > 4) {
                     System.out.println( "c"+this.customer.getId() +  " Decided Food " + Scheduler.currentTime());

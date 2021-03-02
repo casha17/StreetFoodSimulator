@@ -27,9 +27,10 @@ public class TravelToFoodStandChoice extends SimulationProcess {
                     new TravelToPizza(this.customer).activate();
                 } else if (branch < 67) {
                     System.out.println( "c"+this.customer.getId() +  " Decided Chinese " + Scheduler.currentTime());
+                    new TravelToChinese(this.customer).activate();
                 } else {
                     System.out.println( "c"+this.customer.getId() +  " Decided Burger " + Scheduler.currentTime());
-
+                    new TravelToBurger(this.customer).activate();
                 }
 
 

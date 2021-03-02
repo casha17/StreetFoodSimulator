@@ -1,16 +1,16 @@
 
 import org.javasim.*;
-        import org.javasim.streams.ExponentialStream;
+import org.javasim.streams.ExponentialStream;
 import org.javasim.streams.UniformStream;
 
 import java.io.IOException;
 
-public class OrderAgainOrLeave extends SimulationProcess {
+public class RecieveBurger extends SimulationProcess {
 
     private UniformStream burgerMakingTime = new UniformStream(0.15,0.45);
     public Customer customer;
 
-    public OrderAgainOrLeave(Customer customer) {
+    public RecieveBurger(Customer customer) {
         this.customer = customer;
     }
     public void run ()
@@ -18,16 +18,10 @@ public class OrderAgainOrLeave extends SimulationProcess {
         while (!terminated()){
             try
             {
-                //Deciding to order again or leave
-                hold(0.15);
-                int branch = SimulatorCore.getBranch();
-
-                if (branch < 4) {
-                    new TravelToFoodOrDrink(this.customer).activate();
-                }else {
-                    new LeaveTable(this.customer).activate();
-                }
-
+                //Waiting for burger to finish
+                hold(burgerMakingTime.getNumber());
+                SimulatorCore.burgerWorkers++;
+                new OrderAgainOrLeave(this.customer).activate();
                 this.terminate();
             }
             catch (SimulationException e)
@@ -35,6 +29,8 @@ public class OrderAgainOrLeave extends SimulationProcess {
             }
             catch (RestartException e)
             {
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }
