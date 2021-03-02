@@ -15,7 +15,7 @@ public class TravelToDrink extends SimulationProcess {
     }
 
     @Override
-    public void run() {
+    public  void run() {
         while (!this.terminated()) {
             try {
                 // Travel to drink time
@@ -24,9 +24,9 @@ public class TravelToDrink extends SimulationProcess {
 
                 // check if any drink workers are available
                 while (SimulatorCore.drinkWorkers <= 0) {
-                //    System.out.println("c" + customer.getId() + "No drinkWorkers");
+               //     System.out.println("c" + customer.getId() + "No drinkWorkers");
                     SimulatorCore.drinkingQueue.add(this);
-                    this.terminate();
+                    this.suspendProcess();
                 }
 
 

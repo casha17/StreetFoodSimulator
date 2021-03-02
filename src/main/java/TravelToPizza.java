@@ -11,7 +11,7 @@ public class TravelToPizza extends SimulationProcess {
     public TravelToPizza(Customer customer) {
         this.customer = customer;
     }
-    public void run ()
+    public  void run ()
     {
         while (!terminated()){
             try
@@ -20,12 +20,12 @@ public class TravelToPizza extends SimulationProcess {
                 hold(0.15);
 
                  while (SimulatorCore.pizzaWorkers <= 0) {
-                   // System.out.println("c" + customer.getId() + "No Pizzaworkers");
+                 //   System.out.println("c" + customer.getId() + "No Pizzaworkers " + Scheduler.currentTime());
                     SimulatorCore.pizzaQueue.add(this);
-                    this.terminate();
+                    this.suspendProcess();
                 }
 
-
+                //System.out.println("c" + customer.getId() + "using pizzaworker " + Scheduler.currentTime());
                 SimulatorCore.pizzaWorkers--;
                 new RecievePizza(this.customer).activate();
 

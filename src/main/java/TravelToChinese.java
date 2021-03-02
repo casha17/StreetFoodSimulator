@@ -19,9 +19,9 @@ public class TravelToChinese extends SimulationProcess {
                 hold(0.15);
 
                 while (SimulatorCore.chineseWorkers <= 0) {
-                  //  System.out.println("c" + customer.getId() + "No chinese workers");
+              //      System.out.println("c" + customer.getId() + "No chinese workers");
                     SimulatorCore.chineseQueue.add(this);
-                    this.terminate();
+                    this.suspendProcess();
                 }
 
 

@@ -21,7 +21,7 @@ public class TravelToFoodOrDrink extends SimulationProcess {
                 hold(0.15);
 
                 //Printer helper
-                //System.out.println("c"+ customer.getId() + " Travel to food or drink " + Scheduler.currentTime() );
+             //   System.out.println("c"+ customer.getId() + " Travel to food or drink " + Scheduler.currentTime() );
                 // 40% chance
                 if (SimulatorCore.getBranch() > 4) {
                    // System.out.println( "c"+this.customer.getId() +  " Decided Food " + Scheduler.currentTime());
@@ -29,7 +29,7 @@ public class TravelToFoodOrDrink extends SimulationProcess {
 
                     // 60% chance
                 } else {
-                   // System.out.println( "c"+this.customer.getId() +  " Decided Drink " + Scheduler.currentTime());
+                 //   System.out.println( "c"+this.customer.getId() +  " Decided Drink " + Scheduler.currentTime());
                     new TravelToDrink(this.customer).activate();
                 }
 

@@ -22,7 +22,7 @@ public class TravelToCheckout extends SimulationProcess {
                 while (SimulatorCore.cashiers <= 0) {
               //      System.out.println("c" + customer.getId() + "No Cashier");
                     SimulatorCore.cashierQueue.add(this);
-                    this.terminate();
+                    this.suspendProcess();
                 }
 
                 SimulatorCore.cashiers--;

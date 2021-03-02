@@ -20,13 +20,11 @@ public class Pay extends SimulationProcess {
 
                 SimulatorCore.cashiers++;
                 if (!SimulatorCore.cashierQueue.isEmpty()) {
-                    try {
-                        SimulatorCore.cashierQueue.pop().activate();
-                    } catch (Exception ex) {
 
-                    }
+                        SimulatorCore.cashierQueue.pop().activate();
+
                 }
-            //    System.out.println("c"+ customer.getId() + " Pay " + Scheduler.currentTime() );
+             //   System.out.println("c"+ customer.getId() + " Pay " + Scheduler.currentTime() );
 
                 new Leaving(this.customer).activate();
 

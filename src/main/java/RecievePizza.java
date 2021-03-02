@@ -22,12 +22,9 @@ public class RecievePizza extends SimulationProcess {
                 hold(pizzaMakingTime.getNumber());
                 SimulatorCore.pizzaWorkers++;
                 if (!SimulatorCore.pizzaQueue.isEmpty()) {
-                    try {
-                        SimulatorCore.pizzaQueue.pop().activate();
-                    } catch (Exception ex) {
-
-                    }
+                    SimulatorCore.pizzaQueue.pop().activate();
                 }
+              //  System.out.println("c" + customer.getId() + "Released pizzaworker" + " " + Scheduler.currentTime());
                 new OrderAgainOrLeave(this.customer).activate();
                 this.terminate();
             }

@@ -18,7 +18,7 @@ public class Leaving extends SimulationProcess {
             {
                 //Leaving time
                 hold(0.15);
-              //  System.out.println("c"+this.customer.getId() + " Leaving" + " " + Scheduler.currentTime());
+             //   System.out.println("c"+this.customer.getId() + " Leaving" + " " + Scheduler.currentTime());
                 SimulatorCore.totalCustomersLeaved++;
                 this.terminate();
             }

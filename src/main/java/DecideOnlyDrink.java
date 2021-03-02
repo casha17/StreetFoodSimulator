@@ -19,7 +19,7 @@ public class DecideOnlyDrink extends SimulationProcess {
                 //Time Deciding to only drink
                 hold(0.15);
 
-              //  System.out.println( "c"+this.customer.getId() +  " Decide " + Scheduler.currentTime());
+          //      System.out.println( "c"+this.customer.getId() +  " Decide " + Scheduler.currentTime());
 
 
                 //Also Food
@@ -28,7 +28,7 @@ public class DecideOnlyDrink extends SimulationProcess {
               //      System.out.println( "c"+this.customer.getId() +  " Decided also food " + Scheduler.currentTime());
                     new TravelToFoodStandChoice(this.customer).activate();
                 } else {
-             //       System.out.println( "c"+this.customer.getId() +  " Decided only drink " + Scheduler.currentTime());
+               //     System.out.println( "c"+this.customer.getId() +  " Decided only drink " + Scheduler.currentTime());
                     new OrderAgainOrLeave(this.customer).activate();
 
 

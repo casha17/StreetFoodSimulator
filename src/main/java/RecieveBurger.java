@@ -22,11 +22,7 @@ public class RecieveBurger extends SimulationProcess {
                 hold(burgerMakingTime.getNumber());
                 SimulatorCore.burgerWorkers++;
                 if (!SimulatorCore.burgerQueue.isEmpty()) {
-                  try {
                       SimulatorCore.burgerQueue.pop().activate();
-                  } catch (Exception ex) {
-
-                  }
                 }
                 new OrderAgainOrLeave(this.customer).activate();
                 this.terminate();
