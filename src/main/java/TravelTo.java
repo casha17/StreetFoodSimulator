@@ -23,7 +23,7 @@ public class TravelTo extends SimulationProcess {
 
             //Check if there are tables
             while (SimulatorCore.tables <= 0) {
-                System.out.println("c" + customer.getId() + "No tables waiting");
+                //System.out.println("c" + customer.getId() + "No tables waiting");
 
                 // Add to waiting queue and suspend
                 SimulatorCore.tableQueue.add(this);

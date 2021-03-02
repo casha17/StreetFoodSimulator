@@ -24,7 +24,7 @@ public class Arrival extends SimulationProcess {
                 customer = new Customer(SimulatorCore.customerArrivals , Scheduler.currentTime());
 
                 // Print for helping debugging
-                System.out.println("c"+ customer.getId() + " arrival " + Scheduler.currentTime() );
+                //System.out.println("c"+ customer.getId() + " arrival " + Scheduler.currentTime() );
 
                 // new Travel to
                 new TravelTo(customer).activate();

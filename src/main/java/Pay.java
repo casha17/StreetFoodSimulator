@@ -18,7 +18,7 @@ public class Pay extends SimulationProcess {
                 //Paying time
                 hold(0.15);
                 SimulatorCore.cashiers++;
-                System.out.println("c"+ customer.getId() + " Pay " + Scheduler.currentTime() );
+            //    System.out.println("c"+ customer.getId() + " Pay " + Scheduler.currentTime() );
 
                 new Leaving(this.customer).activate();
 

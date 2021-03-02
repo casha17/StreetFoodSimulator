@@ -20,7 +20,7 @@ public class TravelToPizza extends SimulationProcess {
                 hold(0.15);
 
                  while (SimulatorCore.pizzaWorkers <= 0) {
-                    System.out.println("c" + customer.getId() + "No Pizzaworkers");
+                   // System.out.println("c" + customer.getId() + "No Pizzaworkers");
                     SimulatorCore.pizzaQueue.add(this);
                     this.terminate();
                 }

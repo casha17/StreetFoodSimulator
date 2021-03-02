@@ -23,7 +23,7 @@ public class PouringDrink extends SimulationProcess {
                 hold(pouringTime.getNumber());
                 //after pouring release drink worker
                 SimulatorCore.drinkWorkers++;
-                System.out.println( "c"+this.customer.getId() +  " Poured drink " + Scheduler.currentTime());
+             //   System.out.println( "c"+this.customer.getId() +  " Poured drink " + Scheduler.currentTime());
 
                 //Decide only drink or
                 new DecideOnlyDrink(this.customer).activate();

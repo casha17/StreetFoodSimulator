@@ -17,7 +17,7 @@ public class LeaveTable extends SimulationProcess {
             {
                 //Leaving table
                 hold(0.15);
-                System.out.println("c"+ customer.getId() + " Leave table " + Scheduler.currentTime() );
+               // System.out.println("c"+ customer.getId() + " Leave table " + Scheduler.currentTime() );
                 //release table
                 SimulatorCore.tables++;
 

@@ -18,9 +18,9 @@ public class TravelToCheckout extends SimulationProcess {
                 //Traveling time
                 hold(0.15);
                 //using cashier
-                System.out.println("c"+ customer.getId() + " Travel to checkout " + Scheduler.currentTime() );
+             //   System.out.println("c"+ customer.getId() + " Travel to checkout " + Scheduler.currentTime() );
                 while (SimulatorCore.cashiers <= 0) {
-                    System.out.println("c" + customer.getId() + "No Cashier");
+              //      System.out.println("c" + customer.getId() + "No Cashier");
                     SimulatorCore.cashierQueue.add(this);
                     this.terminate();
                 }

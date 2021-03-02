@@ -40,10 +40,6 @@ public class SimulatorCore extends SimulationProcess {
 
     public void run() {
         try {
-
-            for (int i = 0; i<3; i++) {
-                totalNumberOfCustomers = 3;
-
                 Arrival a = new Arrival();
 
                 a.activate();
@@ -64,12 +60,12 @@ public class SimulatorCore extends SimulationProcess {
                 a.terminate();
 
                 Simulation.stop();
+                Simulation.reset();
 
-                SimulatorCore.reset();
 
-                System.out.println("Stopping simulation");
-            }
-            SimulationProcess.mainResume();
+                System.out.println("Stopping simulation!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                this.interrupt();
+                SimulationProcess.mainResume();
         }
         catch (final Exception e)
         {

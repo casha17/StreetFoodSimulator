@@ -20,11 +20,11 @@ public class TravelToDrink extends SimulationProcess {
             try {
                 // Travel to drink time
                 hold(0.15);
-                System.out.println("c" + customer.getId() + " Travel To Drink + " + Scheduler.currentTime());
+             //   System.out.println("c" + customer.getId() + " Travel To Drink + " + Scheduler.currentTime());
 
                 // check if any drink workers are available
                 while (SimulatorCore.drinkWorkers <= 0) {
-                    System.out.println("c" + customer.getId() + "No drinkWorkers");
+                //    System.out.println("c" + customer.getId() + "No drinkWorkers");
                     SimulatorCore.drinkingQueue.add(this);
                     this.terminate();
                 }

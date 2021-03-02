@@ -19,7 +19,7 @@ public class TravelToBurger extends SimulationProcess {
                 hold(0.15);
 
                 while (SimulatorCore.burgerWorkers <= 0) {
-                    System.out.println("c" + customer.getId() + "No burgerWorkers");
+                 //   System.out.println("c" + customer.getId() + "No burgerWorkers");
                     SimulatorCore.burgerQueue.add(this);
                     this.terminate();
                 }
