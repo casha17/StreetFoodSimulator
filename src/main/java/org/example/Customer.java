@@ -1,3 +1,5 @@
+package org.example;
+
 public class Customer {
 
     public Customer(int id , double arrivalTime) {
@@ -27,7 +29,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
+        return "org.example.Customer{" +
                 "id=" + id +
                 ", arrivalTime=" + arrivalTime +
                 '}';

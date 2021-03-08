@@ -1,6 +1,6 @@
+package org.example;
 
 import org.javasim.*;
-import org.javasim.streams.ExponentialStream;
 import org.javasim.streams.UniformStream;
 
 import java.io.IOException;

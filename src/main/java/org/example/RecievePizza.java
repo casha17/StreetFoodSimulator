@@ -1,16 +1,16 @@
+package org.example;
 
 import org.javasim.*;
-import org.javasim.streams.ExponentialStream;
 import org.javasim.streams.UniformStream;
 
 import java.io.IOException;
 
-public class RecieveBurger extends SimulationProcess {
+public class RecievePizza extends SimulationProcess {
 
-    private UniformStream burgerMakingTime = new UniformStream(0.15,0.45);
+    private UniformStream pizzaMakingTime = new UniformStream(0.15,0.45);
     public Customer customer;
 
-    public RecieveBurger(Customer customer) {
+    public RecievePizza(Customer customer) {
         this.customer = customer;
     }
     public void run ()
@@ -18,12 +18,13 @@ public class RecieveBurger extends SimulationProcess {
         while (!terminated()){
             try
             {
-                //Waiting for burger to finish
-                hold(burgerMakingTime.getNumber());
-                SimulatorCore.burgerWorkers++;
-                if (!SimulatorCore.burgerQueue.isEmpty()) {
-                      SimulatorCore.burgerQueue.pop().activate();
+                //Waiting for pizza to finish
+                hold(pizzaMakingTime.getNumber());
+                SimulatorCore.pizzaWorkers++;
+                if (!SimulatorCore.pizzaQueue.isEmpty()) {
+                    SimulatorCore.pizzaQueue.pop().activate();
                 }
+              //  System.out.println("c" + customer.getId() + "Released pizzaworker" + " " + Scheduler.currentTime());
                 new OrderAgainOrLeave(this.customer).activate();
                 this.terminate();
             }

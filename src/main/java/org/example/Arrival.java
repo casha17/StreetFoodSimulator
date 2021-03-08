@@ -1,7 +1,7 @@
+package org.example;
+
 import org.javasim.*;
 import org.javasim.streams.ExponentialStream;
-
-import java.io.IOException;
 
 public class Arrival extends SimulationProcess {
 
@@ -17,10 +17,10 @@ public class Arrival extends SimulationProcess {
                 // Time until next customer arrives
                 hold(0.1);
 
-                // Customer arrived increase total arrivals with one
+                // org.example.Customer arrived increase total arrivals with one
                 SimulatorCore.customerArrivals++;
 
-                // Create new Customer object
+                // Create new org.example.Customer object
                 customer = new Customer(SimulatorCore.customerArrivals , Scheduler.currentTime());
 
                 // Print for helping debugging

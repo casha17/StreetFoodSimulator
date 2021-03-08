@@ -1,3 +1,5 @@
+package org.example;
+
 import org.javasim.RestartException;
 import org.javasim.Scheduler;
 import org.javasim.SimulationException;
@@ -15,9 +17,9 @@ public class Drinking extends SimulationProcess {
     public void run() {
         while (!this.terminated()) {
             try {
-                //Drinking
+                //org.example.Drinking
                 hold(1);
-                System.out.println("c"+ customer.getId() + " Drinking " + Scheduler.currentTime() );
+                System.out.println("c"+ customer.getId() + " org.example.Drinking " + Scheduler.currentTime() );
                 int branch = (int) (Math.random() * (1 - 10)) + 10;
                 //Order again or leave
                 if (branch > 4) {

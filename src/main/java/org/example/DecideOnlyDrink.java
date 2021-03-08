@@ -1,6 +1,7 @@
+package org.example;
+
 import org.javasim.*;
 import org.javasim.streams.ExponentialStream;
-import java.io.IOException;
 
 public class DecideOnlyDrink extends SimulationProcess {
 

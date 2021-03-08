@@ -1,8 +1,8 @@
+package org.example;
+
 import org.javasim.RestartException;
-import org.javasim.Scheduler;
 import org.javasim.SimulationException;
 import org.javasim.SimulationProcess;
-import org.javasim.streams.ExponentialStream;
 import org.javasim.streams.UniformStream;
 
 import java.io.IOException;

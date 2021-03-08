@@ -1,8 +1,7 @@
-import org.javasim.RestartException;
-import org.javasim.Simulation;
-import org.javasim.SimulationException;
+package org.example;
 
-import java.util.Timer;
+import org.javasim.RestartException;
+import org.javasim.SimulationException;
 
 public class main {
 

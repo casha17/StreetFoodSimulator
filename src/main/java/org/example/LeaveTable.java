@@ -1,13 +1,14 @@
+package org.example;
+
 import org.javasim.*;
 import org.javasim.streams.ExponentialStream;
-import java.io.IOException;
 
-public class Pay extends SimulationProcess {
+public class LeaveTable extends SimulationProcess {
 
     private ExponentialStream InterArrivalTime;
     public Customer customer;
 
-    public Pay(Customer customer) {
+    public LeaveTable(Customer customer) {
         this.customer = customer;
     }
     public void run ()
@@ -15,18 +16,18 @@ public class Pay extends SimulationProcess {
         while (!terminated()){
             try
             {
-                //Paying time
+                //org.example.Leaving table
                 hold(0.15);
+            //    System.out.println("c"+ customer.getId() + " Leave table " + Scheduler.currentTime() );
+                //release table
+                SimulatorCore.tables++;
+                if (!SimulatorCore.tableQueue.isEmpty()) {
 
-                SimulatorCore.cashiers++;
-                if (!SimulatorCore.cashierQueue.isEmpty()) {
-
-                        SimulatorCore.cashierQueue.pop().activate();
+                        SimulatorCore.tableQueue.pop().activate();
 
                 }
-             //   System.out.println("c"+ customer.getId() + " Pay " + Scheduler.currentTime() );
 
-                new Leaving(this.customer).activate();
+                new TravelToCheckout(this.customer).activate();
 
                 this.terminate();
             }
