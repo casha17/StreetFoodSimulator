@@ -12,7 +12,12 @@ public class main {
         for (int i = 0; i<3;i++) {
             long startTime = System.currentTimeMillis();
             SimulatorCore simulation = new SimulatorCore();
-            SimulatorCore.totalNumberOfCustomers = 100000;
+            if (args.length == 0) {
+                SimulatorCore.totalNumberOfCustomers = 1;
+            } else {
+                SimulatorCore.totalNumberOfCustomers = Integer.valueOf(args[0]);
+            }
+
             simulation.await();
             SimulatorCore.reset();
             long stopTime = System.currentTimeMillis();
